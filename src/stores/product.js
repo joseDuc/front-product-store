@@ -80,34 +80,28 @@ export const useProductStore = defineStore('product', () => {
   }
 
   function confirmBuy() {
-    //console.log('confirm buy')
-    alert('compara confirmada')
+    alert('Compra confirmada')
   }
 
   function addToChart(product) {
-    const objetoEncontrado = currentCart.value.find((elemento) => elemento.id === product.id)
     if (product.quantity > 0) {
-      if (!objetoEncontrado) {
+      const productoEncontrado = currentCart.value.find((elemento) => elemento.id === product.id)
+      if (!productoEncontrado) {
         currentCart.value.push(product)
       } else {
-        console.log(objetoEncontrado)
         const q = product.quantity
-        objetoEncontrado.quantity += q
+        productoEncontrado.quantity += q
       }
     }
   }
   function debugChart(){
-    console.log("entra debug")
-    console.log(currentCart.value)
     currentCart.value = currentCart.value.filter(item => item.quantity > 0);
-    
   }
 
   async function fetchProduct() {
     const response = await fetch(baseURL)
     const products = await response.json()
     arrayProduct.value = products
-
     arrayProduct.value.forEach((product) => {
       product.quantity = 0
     })

@@ -10,6 +10,7 @@
 footer {
   background-color: rgb(108, 148, 185);
   width: 100vw;
+  margin-top: 20px;
 }
 h2 {
   text-align: center;

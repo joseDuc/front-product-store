@@ -13,3 +13,7 @@ body{
 h1{
   font-size: 2em;
 }
+h2 {
+  text-align: center;
+  color: rgb(121, 174, 144);
+}

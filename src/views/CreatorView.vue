@@ -27,7 +27,7 @@ const handleSubmit = (e) => {
 
 <template>
   <section>
-    <h2 class="title">Product Creator</h2>
+    <h2 class="title">CREATE PRODUCT</h2>
     <form  @submit="handleSubmit">
       <div class="data-form">
         <label for="name">Name:</label>
@@ -75,7 +75,7 @@ const handleSubmit = (e) => {
       </div>
 
       <div class="data-form btn-submit">
-        <button type="submit">Create Product</button>
+        <button type="submit">Create</button>
       </div>
     </form>
   </section>

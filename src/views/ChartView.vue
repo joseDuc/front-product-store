@@ -15,16 +15,13 @@ const finalPrice = computed(() => {
   })
   return result
 })
-
-
-
 </script>
 
 <template>
   <section>
     <article>
       <div class="buy-list">
-        <h2>PRODUCTOS COMPRADOS</h2>
+        <h2>PURCHASED PRODUCTS</h2>
         <div class="list">
           <ProductCard
             v-for="product in productsInChart"
@@ -34,7 +31,7 @@ const finalPrice = computed(() => {
         </div>
       </div>
     </article>
-    <article class="confirm-list">
+    <article v-if="productsInChart.length > 0" class="confirm-list">
       <p>¿Está conforme con la compra?</p>
       <button class="btn-confirm" @click="productStore.confirmBuy()">¡Sí, comprar ya!</button>
       <p>El precio final es de {{ finalPrice }}</p>
@@ -55,6 +52,7 @@ h2{
 .list {
     display: flex;
     gap:10px;
+    flex-wrap: wrap;
     margin-bottom: 10px;
     justify-content: space-around;
 }

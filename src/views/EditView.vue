@@ -24,7 +24,7 @@ const handleDelete = (e) => {
 
 <template>
   <section>
-    <h2 class="title">PRODUCT EDITOR</h2>
+    <h2 class="title">EDITOR PRODUCT</h2>
     <form @submit="handleSubmit">
       <div class="data-form">
         <label for="name">Name:</label>
@@ -83,7 +83,7 @@ const handleDelete = (e) => {
         />
       </div>
 
-      <div v-if="productStore.currentProduct" class="buttons">
+      <div class="buttons">
         <div class="data-form btn-submit">
           <button type="submit">Edit</button>
         </div>

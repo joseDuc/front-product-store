@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, computed } from 'vue'
 import { useProductStore } from '@/stores/product'
 
 const productStore = useProductStore()
@@ -10,9 +10,21 @@ const props = defineProps({
     Required: true
   }
 })
-
+// Función para incrementar la cantidad
+const incrementQuantity = () => {
+  product.value.quantity += 1
+}
+// Función para decrementar la cantidad
+const decrementQuantity = () => {
+  if (product.value.quantity > 0) {
+    product.value.quantity -= 1
+  }
+}
 const product = ref(props.product)
-
+//const quantity=ref(product.value.quantity)
+const computedQuantity = computed(() => {
+  return product.value.quantity < 0 ? 0 : product.value.quantity
+})
 </script>
 
 <template>
@@ -20,18 +32,20 @@ const product = ref(props.product)
     <p>{{ product.name }}</p>
     <p>Precio: {{ product.price }}€</p>
     <p>{{ product.description }}</p>
-    <p>Ref:  {{ product.id }}</p>
+
     <img :src="product.image" alt="" />
+
+    <p>Ref: {{ product.id }}</p>
+
     <article>
       <div class="quantity">
-        <button @click="product.quantity++">+</button>
-        <button @click="product.quantity--">-</button>
+        <button @click="incrementQuantity">+</button>
+        <button @click="decrementQuantity">-</button>
       </div>
 
       <button class="add-chart" @click="productStore.addToChart(product)">
-        Añadir {{ product.quantity }} al carro
+        Añadir {{ computedQuantity }} al carro
       </button>
-
     </article>
   </section>
 </template>
@@ -47,15 +61,14 @@ section {
   justify-content: space-evenly;
   border-radius: 10px;
 }
-article{
+article {
   display: flex;
   flex-direction: column;
 
-  .quantity{
+  .quantity {
     display: flex;
     justify-content: center;
   }
-
 }
 p {
   width: 80%;
@@ -75,5 +88,4 @@ button {
 .add-chart {
   width: 120px;
 }
-
 </style>
