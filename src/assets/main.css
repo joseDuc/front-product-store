@@ -1,0 +1,15 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(208, 224, 232);
+}
+
+h1{
+  font-size: 2em;
+}
