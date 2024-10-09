@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CreatorView from '@/views/CreatorView.vue'
-import ChartView from '@/views/ChartView.vue'
+import CartView from '@/views/CartView.vue'
 import EditView from '@/views/EditView.vue'
 
 const router = createRouter({
@@ -18,9 +18,9 @@ const router = createRouter({
       component: CreatorView
     },
     {
-      path: '/chart',
-      name: 'chart',
-      component: ChartView
+      path: '/cart',
+      name: 'cart',
+      component: CartView
     },
     {
       path: '/edit/:id',

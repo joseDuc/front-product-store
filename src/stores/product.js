@@ -22,9 +22,8 @@ export const useProductStore = defineStore('product', () => {
       arrayProduct.value.push(newProduct) // Actualizar la lista de productos
       alert('El producto ' + product.description + ' ha sido creado')
     } catch (error) {
-      alert (error)
+      alert(error)
     }
-    
   }
 
   async function findProduct(id) {
@@ -60,12 +59,11 @@ export const useProductStore = defineStore('product', () => {
     } catch (error) {
       alert('Error al editar el producto ' + currentProduct.value.id)
     }
-    
   }
 
   async function deleteProduct() {
     try {
-      if (currentProduct.value){
+      if (currentProduct.value) {
         await fetch(baseURL + '/' + currentProduct.value.id, {
           method: 'DELETE',
           headers: {
@@ -83,7 +81,7 @@ export const useProductStore = defineStore('product', () => {
     alert('Compra confirmada')
   }
 
-  function addToChart(product) {
+  function addToCart(product) {
     if (product.quantity > 0) {
       const productoEncontrado = currentCart.value.find((elemento) => elemento.id === product.id)
       if (!productoEncontrado) {
@@ -94,8 +92,8 @@ export const useProductStore = defineStore('product', () => {
       }
     }
   }
-  function debugChart(){
-    currentCart.value = currentCart.value.filter(item => item.quantity > 0);
+  function debugCart() {
+    currentCart.value = currentCart.value.filter((item) => item.quantity > 0)
   }
 
   async function fetchProduct() {
@@ -113,11 +111,11 @@ export const useProductStore = defineStore('product', () => {
     currentProduct,
     createProduct,
     confirmBuy,
-    addToChart,
+    addToCart,
     fetchProduct,
     findProduct,
     editProduct,
     deleteProduct,
-    debugChart
+    debugCart
   }
 })

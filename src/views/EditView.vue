@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+
 import { useProductStore } from '@/stores/product'
 import { useRoute } from 'vue-router'
 

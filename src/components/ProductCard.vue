@@ -43,7 +43,7 @@ const computedQuantity = computed(() => {
         <button @click="decrementQuantity">-</button>
       </div>
 
-      <button class="add-chart" @click="productStore.addToChart(product)">
+      <button class="add-cart" @click="productStore.addToCart(product)">
         Añadir {{ computedQuantity }} al carro
       </button>
     </article>
@@ -85,7 +85,7 @@ button {
   width: 40px;
 }
 
-.add-chart {
+.add-cart {
   width: 120px;
 }
 </style>
