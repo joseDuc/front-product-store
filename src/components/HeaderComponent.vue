@@ -4,7 +4,7 @@
   <header>
     <h2>Product Store</h2>
     <div>
-      <router-link to="/">Go to HOME</router-link>
+      <router-link to="/">Home</router-link>
       <router-link to="/cart">Cart</router-link>
     </div>
   </header>

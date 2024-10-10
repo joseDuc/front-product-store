@@ -36,7 +36,7 @@ const finalPrice = computed(() => {
       <button class="btn-confirm" @click="productStore.confirmBuy()">¡Sí, comprar ya!</button>
       <p>El precio final es de {{ finalPrice }}</p>
     </article>
-    <p v-if="!productsInCart.length > 0" >No hay productos en el carro</p>
+    <p v-if="!productsInCart.length > 0">No hay productos en el carro</p>
   </section>
 </template>
 
@@ -71,6 +71,7 @@ h2 {
 }
 p {
   text-align: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+    Verdana, sans-serif;
 }
 </style>

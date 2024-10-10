@@ -82,16 +82,19 @@ export const useProductStore = defineStore('product', () => {
   }
 
   function addToCart(product) {
-    if (product.quantity > 0) {
-      const productoEncontrado = currentCart.value.find((elemento) => elemento.id === product.id)
-      if (!productoEncontrado) {
-        currentCart.value.push(product)
-      } else {
+    const productoEncontrado = currentCart.value.find((elemento) => elemento.id === product.id)
+    if (!productoEncontrado) {
+      currentCart.value.push(product)
+    } else {
+      if (productoEncontrado.quantity + product.quantity <= productoEncontrado.stock) {
         const q = product.quantity
         productoEncontrado.quantity += q
+      } else {
+        productoEncontrado.message.value = 'Supera el stock'
       }
     }
   }
+
   function debugCart() {
     currentCart.value = currentCart.value.filter((item) => item.quantity > 0)
   }

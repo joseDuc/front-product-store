@@ -10,12 +10,20 @@ const props = defineProps({
     Required: true
   }
 })
+
 // Función para incrementar la cantidad
 const incrementQuantity = () => {
-  product.value.quantity += 1
+  message.value=''
+  if (product.value.quantity<product.value.stock){
+    product.value.quantity += 1
+  }else{
+    message.value='Supera el stock'
+  }
 }
+
 // Función para decrementar la cantidad
 const decrementQuantity = () => {
+    message.value=''
   if (product.value.quantity > 0) {
     product.value.quantity -= 1
   }
@@ -25,6 +33,7 @@ const product = ref(props.product)
 const computedQuantity = computed(() => {
   return product.value.quantity < 0 ? 0 : product.value.quantity
 })
+const message = ref('')
 </script>
 
 <template>
@@ -47,6 +56,7 @@ const computedQuantity = computed(() => {
         Añadir {{ computedQuantity }} al carro
       </button>
     </article>
+    <p>{{ message }}</p>
   </section>
 </template>
 
