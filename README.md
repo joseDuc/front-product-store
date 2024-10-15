@@ -64,11 +64,7 @@ La persistencia de los datos está gestionada desde un servidor back-end
 
 
 # Elección del proyecto:
-La opción de desarrollar este proyecto viene dada por la dificultad que representaba iniciar desde 0 por las razones siguientes: <br>
-
-La falta de diponibilidad, la dificultad y versatilidad al manejar todas las herramientas necesarias para una ejecución aceptable.
-
-A partir de la plantilla de la aplicación 'Demo' referente a este ejercicio, he acabado de desarrollar el CRUD, también he adaptado el CSS para centrar y distanciar los elementos lo más estéticamente posible y que se presten al efecto responsive. 
+A partir de la plantilla de la aplicación 'Demo' referente a este ejercicio, he completado el CRUD, también he adaptado el CSS para centrar y distanciar los elementos lo más estéticamente posible y que se presten al efecto responsive. 
 También he incluido funciones de soporte para limitar las unidades de compra.
 
 
