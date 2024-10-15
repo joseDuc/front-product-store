@@ -134,7 +134,9 @@ textarea {
   width: 60%;
   resize: none;
 }
-
+input[type="number"]{
+  text-align: right;
+}
 button {
   padding: 0.75rem;
   background-color: #007bff;

@@ -14,6 +14,7 @@ productStore.fetchProduct()
         v-for="product in productStore.arrayProduct"
         v-bind:key="product.id"
         :product="product"
+        :addable="true"
       >
       </ProductCard>
     </div>

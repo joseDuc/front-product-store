@@ -26,15 +26,16 @@ const finalPrice = computed(() => {
           <ProductCard
             v-for="product in productsInCart"
             :product="product"
+            :addable="false"
             v-bind:key="product.id"
           />
         </div>
       </div>
     </article>
     <article v-if="productsInCart.length > 0" class="confirm-list">
-      <p>¿Está conforme con la compra?</p>
-      <button class="btn-confirm" @click="productStore.confirmBuy()">¡Sí, comprar ya!</button>
-      <p>El precio final es de {{ finalPrice }}</p>
+
+      <button class="btn-confirm" @click="productStore.confirmBuy()">Comprar</button>
+      <p>Precio total: {{ finalPrice }}</p>
     </article>
     <p v-if="!productsInCart.length > 0">No hay productos en el carro</p>
   </section>
@@ -67,6 +68,7 @@ h2 {
     background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 4px;
   }
 }
 p {

@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useProductStore } from '@/stores/product'
 
-const productStore=useProductStore()
+const productStore = useProductStore()
 
 const name = ref('')
 const description = ref('')
@@ -28,7 +28,7 @@ const handleSubmit = (e) => {
 <template>
   <section>
     <h2 class="title">CREATE PRODUCT</h2>
-    <form  @submit="handleSubmit">
+    <form @submit="handleSubmit">
       <div class="data-form">
         <label for="name">Name:</label>
         <input v-model="name" type="text" id="name" placeholder="Enter product name" required />
@@ -82,14 +82,13 @@ const handleSubmit = (e) => {
 </template>
 
 <style scoped>
-.title{
+.title {
   text-align: center;
   margin-bottom: 10px;
 }
-.data-form{
+.data-form {
   display: flex;
   justify-content: space-between;
-
 }
 
 form {
@@ -101,7 +100,7 @@ form {
   margin: 0 auto;
   padding: 10px;
 
-  .btn-submit{
+  .btn-submit {
     justify-content: center;
   }
 }
@@ -117,7 +116,11 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 60%;
-  resize:none;
+  resize: none;
+}
+
+input[type='number'] {
+  text-align: right;
 }
 
 button {

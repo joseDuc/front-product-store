@@ -24,6 +24,13 @@ header {
     gap: 20px;
   }
 }
+a {
+  text-decoration: none;
+  color:black;
+}
+a:hover {
+  color: white;
+}
 h2 {
   text-align: center;
   color: black;

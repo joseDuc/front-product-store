@@ -39,7 +39,7 @@ La aplicación representa una tienda de venta online donde inicialmente se acced
 
 Se escoge el producto indicándole el número de unidades que se desea adquirir y se agrega al carro de la compra.
 
-Posteriormente se consulta la lista de productos seleccionados y se acepta la compra.
+Posteriormente se consulta la lista de productos seleccionados y se acepta la compra o se modifican las cantidades.
 
 Permite crear, editar y eliminar productos a través de la modificación de la URL del navegador.
 
@@ -68,11 +68,13 @@ La opción de desarrollar este proyecto viene dada por la dificultad que represe
 
 La falta de diponibilidad, la dificultad y versatilidad al manejar todas las herramientas necesarias para una ejecución aceptable.
 
-A partir de la plantilla de la aplicación 'Demo' referente a este ejercicio, he acabado de desarrollar el CRUD, también he adaptado el CSS para centrar y distanciar los elementos lo más estéticamente posible y que se presten al efecto responsive. También he incluido funciones de soporte para controlar los límites en las unidades de compra.
+A partir de la plantilla de la aplicación 'Demo' referente a este ejercicio, he acabado de desarrollar el CRUD, también he adaptado el CSS para centrar y distanciar los elementos lo más estéticamente posible y que se presten al efecto responsive. 
+También he incluido funciones de soporte para limitar las unidades de compra.
 
 
 # Las dificultades más relevantes:
-VUE como frameWork en su conjunto aparece como una herramienta excepcional para crear aplicaciónes front robustas y modulares. Pero la curva de aprendizaje que requiere para conocer el concepto que lo fundamenta, requiere de mucha práctica en sus diferentes fases como en:
+VUE como frameWork en su conjunto aparece como una herramienta excepcional para crear aplicaciónes front robustas y modulares. 
+Pero la curva de aprendizaje para conocer el concepto que lo fundamenta, requiere de mucha práctica en sus diferentes fases como en:
 <br>
 - El análisis de los 'contentedores' para mantenter la unicidad de los objetos
 - La creación de 'stores' para modular las funciones y estados
@@ -80,3 +82,4 @@ VUE como frameWork en su conjunto aparece como una herramienta excepcional para 
 - La fusión con el HTML
 
 La ligera comprensión de toda esta lógica de desarrollo ha limitado la amplitud de la aplicación resultando escueta y meramente básica.
+

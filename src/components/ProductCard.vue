@@ -8,7 +8,12 @@ const props = defineProps({
   product: {
     type: Object,
     Required: true
+  },
+  
+  addable: {
+    type: Boolean
   }
+
 })
 
 // Función para incrementar la cantidad
@@ -17,7 +22,7 @@ const incrementQuantity = () => {
   if (product.value.quantity<product.value.stock){
     product.value.quantity += 1
   }else{
-    message.value='Supera el stock'
+    message.value=product.value.quantity + 1 +' Supera el stock'
   }
 }
 
@@ -40,7 +45,7 @@ const message = ref('')
   <section>
     <p>{{ product.name }}</p>
     <p>Precio: {{ product.price }}€</p>
-    <p>{{ product.description }}</p>
+    <p class="description"> {{ product.description }}</p>
 
     <img :src="product.image" alt="" />
 
@@ -48,15 +53,16 @@ const message = ref('')
 
     <article>
       <div class="quantity">
-        <button @click="incrementQuantity">+</button>
-        <button @click="decrementQuantity">-</button>
+        <button class="counter" @click="incrementQuantity">+</button>
+        <button class="counter" @click="decrementQuantity">-</button>
       </div>
-
-      <button class="add-cart" @click="productStore.addToCart(product)">
+      
+      <button v-if="props.addable" class="add-cart" @click="productStore.addToCart(product)">
         Añadir {{ computedQuantity }} al carro
       </button>
+      <p class="total" v-if="!props.addable" >Cantidad {{ computedQuantity }}</p>
     </article>
-    <p>{{ message }}</p>
+    <p class="message" @click="message=''">{{ message }}</p>
   </section>
 </template>
 
@@ -70,6 +76,11 @@ section {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
+
+  .description{
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
 }
 article {
   display: flex;
@@ -81,9 +92,8 @@ article {
   }
 }
 p {
-  width: 80%;
+  width: 100%;
   text-align: center;
-  margin: 5px 0;
 }
 
 img {
@@ -93,9 +103,23 @@ img {
 
 button {
   width: 40px;
+  
 }
 
+.counter{
+  font-weight: bolder;
+  font-size: 15px;
+}
 .add-cart {
   width: 120px;
+}
+
+.total{
+  color:#007bff ;
+}
+
+.message{
+  color:red ;
+  cursor: pointer;
 }
 </style>
