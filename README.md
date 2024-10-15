@@ -49,8 +49,8 @@ El carro de la compra controla que no se agreguen productos duplicados, incremen
 
 También depura la lista del carro cuando detecta productos con 0 unidades solicitadas. De manera que al consultar el carro de la compra sólo aparecen los productos en que sus unidades solicitadas son mayor a 0.
 
-La persistencia de los datos está gestionada desde un servidor back-end que responde a las peticiones de la aplicación.
-### La aplicación está disponible en gitHub en la URL siguiente:
+La persistencia de los datos está gestionada desde un servidor back-end 
+### El back-end está disponible en gitHub en la URL siguiente:
 [back-end] (https://github.com/joseDuc/back-product-store.git)
 
 
