@@ -33,7 +33,8 @@ npm run build
 ```sh
 npm run lint
 ```
-
+## Versión de la aplicación por Jose Antonio Grima:
+[Enlace a linkedin](https://www.linkedin.com/in/jose-antonio-grima-69425086/)
 # Objetivo de la aplicación front 'Product-Store':
 La aplicación representa una tienda de venta online donde inicialmente se accede al muestrario de productos.
 
